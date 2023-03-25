@@ -13,7 +13,10 @@ CLEANUP = rm -f
 RC ?= /usr/bin/rc
 
 BOARD ?= pca10100
-JLINK_SERIAL1 :=  685689088
+JLINK_SERIAL1 :=  685447274
+JLINK_SERIAL2 :=  685114167
+JLINK_SERIAL3 :=  685509936
+JLINK_SERIAL4 :=  685689088
 
 
 ####################################################################################################################
@@ -127,7 +130,18 @@ build: cleanall
 cleanall:
 	cd ${WMSDK_BASE} &&	make clean_all target_board=${BOARD} app_name=${APP_NAME}
 
-flash:
+flash1:
 	nrfjprog -f NRF52 --recover --snr ${JLINK_SERIAL1}
 	nrfjprog -f NRF52 --snr ${JLINK_SERIAL1} --program ${WMSDK_BASE}/${BUILDDIR}/final_image_$(APP_NAME).hex --chiperase --reset --verify
 
+flash2:
+	nrfjprog -f NRF52 --recover --snr ${JLINK_SERIAL2}
+	nrfjprog -f NRF52 --snr ${JLINK_SERIAL2} --program ${WMSDK_BASE}/${BUILDDIR}/final_image_$(APP_NAME).hex --chiperase --reset --verify
+
+flash3:
+	nrfjprog -f NRF52 --recover --snr ${JLINK_SERIAL3}
+	nrfjprog -f NRF52 --snr ${JLINK_SERIAL3} --program ${WMSDK_BASE}/${BUILDDIR}/final_image_$(APP_NAME).hex --chiperase --reset --verify
+
+flash4:
+	nrfjprog -f NRF52 --recover --snr ${JLINK_SERIAL4}
+	nrfjprog -f NRF52 --snr ${JLINK_SERIAL4} --program ${WMSDK_BASE}/${BUILDDIR}/final_image_$(APP_NAME).hex --chiperase --reset --verify

@@ -81,7 +81,7 @@ bool AppSettings_store(app_settings_t* settings) {
 bool AppSettings_configureNode(app_settings_t* settings) {
     bool ret = true;
 
-    LOG(LVL_INFO, "network_address: %u %u", settings->network_address ,settings->network_channel);
+    LOG(LVL_DEBUG, "network_address: %u %u", settings->network_address ,settings->network_channel);
 
 
     app_lib_settings_role_e node_role = APP_LIB_SETTINGS_ROLE_AUTOROLE_LL;
@@ -111,7 +111,7 @@ bool AppSettings_configureNode(app_settings_t* settings) {
 void AppSettings_settingsGet(app_settings_t* settings) {
     App_Persistent_read((uint8_t *)settings, sizeof(app_settings_t));
     if (settings->record_magic != APPLIB_SETTINGS_RECORD_MAGIC) {
-        LOG(LVL_INFO, "Settings not found in flash, use default settings");
+        LOG(LVL_DEBUG, "Settings not found in flash, use default settings");
         get_default_settings(settings);
     }
 }

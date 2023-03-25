@@ -67,9 +67,18 @@ void App_init(const app_global_functions_t* functions) {
     Led_init();
     Button_init();
 
+
     /* Retrieve the settings (default values or if available from persistent store) */
     AppSettings_settingsGet(&m_app_settings);
 
+    LOG(LVL_ERROR, "");
+    LOG(LVL_ERROR, "********************************************");
+    if (m_app_settings.is_sink) {
+        LOG(LVL_ERROR, "SINK, Version: %u.%u", VER_MAJOR, VER_MINOR);
+    } else {
+        LOG(LVL_ERROR, "NODE, Version: %u.%u", VER_MAJOR, VER_MINOR);
+    }
+    LOG(LVL_ERROR, "");
 
     // check if we have to do an OTAP
     if (m_app_settings.do_otap == 1) {

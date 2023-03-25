@@ -210,8 +210,6 @@ extern void Fsm_createStatic(
     fsm_context_p->ble_context_p = ble_context_p;
 
     fsm_context_p->initialized = false;
-    LOG(LVL_ERROR, "********************************************");
-    LOG(LVL_ERROR, "APP VERSION: %u.%u\n", VER_MAJOR, VER_MINOR);
 
     /* create the local fsm state machine */
     Sm_createStatic(fsm_context_p->sm_context_p,
