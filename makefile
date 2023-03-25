@@ -122,7 +122,7 @@ copyright-add:
 # targets
 # ---------------------------------------------------------------------------
 build: cleanall
-	cd ${WMSDK_BASE} && mkdir -p ${BUILDDIR} && bear --output source/${APP_NAME}/compile_commands.json --	make app_name=${APP_NAME} target_board=${BOARD}
+	cd ${WMSDK_BASE} && touch .license_accepted && mkdir -p ${BUILDDIR} && bear --output source/${APP_NAME}/compile_commands.json --	make app_name=${APP_NAME} target_board=${BOARD}
 
 cleanall:
 	cd ${WMSDK_BASE} &&	make clean_all target_board=${BOARD} app_name=${APP_NAME}
