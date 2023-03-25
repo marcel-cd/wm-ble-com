@@ -1,0 +1,8 @@
+/test/mocks/
+/out/
+/doxygen.log
+/.ccls-cache/
+/compile_commands.json
+/wm-image/*
+!/wm-image/readme.md
+/.cache/

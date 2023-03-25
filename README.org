@@ -1,0 +1,12 @@
+#+title: Wirepas Flutter Example Application
+#+author: marcel@clever.design
+
+* Remarks
+- *You need a Wirepas License* with the binary image files for building this app
+- The Makefile does not work on Windows, as I use symlinks for out of tree build in WM-SDK (I use a Linux based system, but it should also work with the apple thing)
+
+* Build
+- do a recursive clone of this repository
+- add wirepas binary image files to [[file:wm-image/][wm-image]] folder
+- change the location of your gcc toolchain in [[./config.mk][./config.mk]]
+- run ~make build~ followed by a ~make flash~ in the root directory

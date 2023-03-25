@@ -1,0 +1,3 @@
+[submodule "wm-sdk"]
+	path = wm-sdk
+	url = git@github.com:marcel-cd/wm-sdk.git
