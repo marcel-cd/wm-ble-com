@@ -10,3 +10,10 @@
 - add wirepas binary image files to [[file:wm-image/][wm-image]] folder
 - change the location of your gcc toolchain in [[./config.mk][./config.mk]]
 - run ~make build~ followed by a ~make flash~ in the root directory
+
+* Sequence
+#+CAPTION: Uplaod Process
+#+attr_html: :width 800px
+#+attr_latex: :width 800px
+#+NAME:   fig:seq_upload
+[[./doc/seq_upload.png]]
